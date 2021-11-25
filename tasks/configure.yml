@@ -1,0 +1,17 @@
+---
+- name: Configure unbound.conf
+  template:
+    src: etc/unbound/unbound.conf.j2
+    dest: /etc/unbound/unbound.conf
+    mode: 0644
+    owner: root
+    group: root
+
+- name: Make sure extra configs are present
+  template:
+    src: "etc/unbound/unbound.conf.d/{{ item }}.j2"
+    dest: "/etc/unbound/unbound.conf.d/{{ item }}"
+    mode: 0644
+    owner: root
+    group: root
+  with_items: "{{ unbound_extra_configs }}"

@@ -1,0 +1,31 @@
+{{ ansible_managed | comment }}
+
+include: "/etc/unbound/unbound.conf.d/*.conf"
+
+{# TODO: implement unbound-control #}
+remote-control:
+    control-enable: no
+
+server:
+{% for listener in unbound_listen %}
+    interface: {{ listener }}
+{% endfor %}
+
+{% for acl in unbound_access %}
+    {{ acl }}
+{% endfor %}
+
+    num-threads: {{ unbound_threads }}
+
+    hide-identity: {{ unbound_hide_identity }}
+    hide-version: {{ unbound_hide_version }}
+
+    use-syslog: {{ unbound_syslog }}
+
+{% zone in unbound_forward_zones %}
+forward-zone:
+        name: "{{ zone['name'] }}"
+{% for address in zone['addresses'] %}
+        forward-addr: {{ address }}
+{% endfor %}
+{% endfor %}

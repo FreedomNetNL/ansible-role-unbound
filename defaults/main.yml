@@ -1,0 +1,38 @@
+---
+unbound_listen:
+  - lo
+# - 127.0.0.1
+# - ::
+
+# Unbound access control
+unbound_access:
+  - fd00:1::/32 allow
+  - ::/0 refuse
+  - 0.0.0.0/0 refuse
+  - 10.0.0.0/8 allow
+  - 172.16.0.0/12 allow
+  - 192.168.0.0/16 allow
+
+# Unbound forward zones
+# Default: root -> dns.freedom.nl
+unbound_forward_zones:
+  - name: .
+    addresses:
+      - 185.93.175.43
+      - 185.232.98.76
+      - 208.67.220.220
+
+# Default verbosity level is 1
+# 0 upto 5
+unbound_verbosity: 1
+
+# Unbound resolver privacy
+unbound_hide_version: yes
+unbound_hide_identity: yes
+
+# Unbound log to syslog
+unbound_syslog: yes
+
+# Unbound extra configuration files
+unbound_extra_configs:
+  - consul.conf
