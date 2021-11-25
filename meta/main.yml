@@ -18,3 +18,5 @@ galaxy_info:
       - unbound
       - networking
       - system
+
+dependencies: []
