@@ -1,6 +1,7 @@
 ---
 galaxy_info:
     role_name: unbound
+    namespace: freedominternet
     author: Yvan Watchman
     company: Freedom Internet B.V.
     description: Role for installing and configuring Unbound, a validating, recursive and caching DNS resolver.
