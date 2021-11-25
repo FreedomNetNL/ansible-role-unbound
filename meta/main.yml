@@ -1,0 +1,20 @@
+---
+galaxy_info:
+    role_name: unbound
+    author: Yvan Watchman
+    company: Freedom Internet B.V.
+    description: Role for installing and configuring Unbound, a validating, recursive and caching DNS resolver.
+    min_ansible_version: 2.8
+    license: license (BSD, MIT)
+    platforms:
+      - name: Debian
+        versions:
+          - all
+      - name: Ubuntu
+        versions:
+          - all
+    galaxy_tags: 
+      - dns
+      - unbound
+      - networking
+      - system
