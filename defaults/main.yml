@@ -22,6 +22,15 @@ unbound_forward_zones:
       - 185.232.98.76
       - 208.67.220.220
 
+# Unbound stub zones
+# Default: [] | list
+# Example:
+# - name: consul
+#   addresses:
+#     - 127.0.0.1@8600
+unbound_stub_zones: []
+
+
 # Default verbosity level is 1
 # 0 upto 5
 unbound_verbosity: 1

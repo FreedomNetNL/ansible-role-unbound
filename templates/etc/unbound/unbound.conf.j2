@@ -29,3 +29,11 @@ forward-zone:
         forward-addr: {{ address }}
 {% endfor %}
 {% endfor %}
+
+{% zone in unbound_stub_zones %}
+stub-zone:
+        name: "{{ zone['name'] }}"
+{% for address in zone['addresses'] %}
+        stub-addr: {{ address }}
+{% endfor %}
+{% endfor %}
