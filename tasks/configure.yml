@@ -6,6 +6,7 @@
     mode: 0644
     owner: root
     group: root
+    validate: "/usr/sbin/unbound-checkconf %s"
   notify: restart unbound
 
 - name: Make sure extra configs are present
@@ -15,5 +16,6 @@
     mode: 0644
     owner: root
     group: root
+    validate: "/usr/sbin/unbound-checkconf %s"
   with_items: "{{ unbound_extra_configs }}"
   notify: restart unbound

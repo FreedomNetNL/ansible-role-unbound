@@ -36,11 +36,11 @@ unbound_stub_zones: []
 unbound_verbosity: 1
 
 # Unbound resolver privacy
-unbound_hide_version: yes
-unbound_hide_identity: yes
+unbound_hide_version: "yes"
+unbound_hide_identity: "yes"
 
 # Unbound log to syslog
-unbound_syslog: yes
+unbound_syslog: "yes"
 
 # Unbound threading
 unbound_threads: 1

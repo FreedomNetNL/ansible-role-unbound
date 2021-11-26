@@ -11,8 +11,9 @@ server:
     interface: {{ listener }}
 {% endfor %}
 
+
 {% for acl in unbound_access %}
-    {{ acl }}
+    access-control: {{ acl }}
 {% endfor %}
 
     num-threads: {{ unbound_threads }}
