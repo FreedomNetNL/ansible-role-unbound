@@ -42,6 +42,9 @@ unbound_hide_identity: yes
 # Unbound log to syslog
 unbound_syslog: yes
 
+# Unbound threading
+unbound_threads: 1
+
 # Unbound extra configuration files
 unbound_extra_configs:
   - consul.conf
