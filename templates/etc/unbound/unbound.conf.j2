@@ -22,7 +22,7 @@ server:
 
     use-syslog: {{ unbound_syslog }}
 
-{% zone in unbound_forward_zones %}
+{% for zone in unbound_forward_zones %}
 forward-zone:
         name: "{{ zone['name'] }}"
 {% for address in zone['addresses'] %}
@@ -30,7 +30,7 @@ forward-zone:
 {% endfor %}
 {% endfor %}
 
-{% zone in unbound_stub_zones %}
+{% for zone in unbound_stub_zones %}
 stub-zone:
         name: "{{ zone['name'] }}"
 {% for address in zone['addresses'] %}
