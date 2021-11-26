@@ -1,8 +1,7 @@
 ---
 unbound_listen:
-  - lo
-# - 127.0.0.1
-# - ::
+  - 127.0.0.1
+  - "::"
 
 # Unbound access control
 unbound_access:
