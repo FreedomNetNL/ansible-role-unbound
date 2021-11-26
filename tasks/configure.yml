@@ -6,6 +6,7 @@
     mode: 0644
     owner: root
     group: root
+  notify: restart unbound
 
 - name: Make sure extra configs are present
   template:
@@ -15,3 +16,4 @@
     owner: root
     group: root
   with_items: "{{ unbound_extra_configs }}"
+  notify: restart unbound

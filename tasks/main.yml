@@ -4,3 +4,9 @@
 
 - name: Include configuration tasks
   include_tasks: configure.yml
+
+- name: Make sure service is started and enabled
+  service:
+    name: unbound
+    state: started
+    enabled: yes
